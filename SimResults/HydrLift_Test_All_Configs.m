@@ -56,7 +56,7 @@ res_out_titles = {'Run' 'Hardstop' 'Control' 'Motor' 'Valve' 'Actuator' 'Load' '
 
 xlswrite([HydrLift_Homedir '/SimResults/Hydraulic_Lift_Res.xlsx'],res_out_titles,version('-release'),'A2');
 xlswrite([HydrLift_Homedir '/SimResults/Hydraulic_Lift_Res.xlsx'],res_out,version('-release'),'A3');
-xlswrite([HydrLift_Homedir '/SimResults/Hydraulic_Lift_Res.xlsx'],res_out,datestr(now),'B1');
+xlswrite([HydrLift_Homedir '/SimResults/Hydraulic_Lift_Res.xlsx'],datestr(now),version('-release'),'B1');
 
 
 
