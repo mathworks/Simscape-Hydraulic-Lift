@@ -2,11 +2,12 @@
 
 HydrLift_Homedir = pwd;
 addpath(pwd);
-addpath([pwd '\Images']);
-addpath([pwd '\Scripts_Data']);
-addpath([pwd '\Libraries']);
-addpath([pwd '\Libraries\Images']);
-addpath([pwd '\SimResults']);
+addpath([pwd filesep 'Images']);
+addpath([pwd filesep 'Scripts_Data']);
+addpath([pwd filesep 'Libraries']);
+addpath([pwd filesep 'Libraries\Images']);
+addpath([pwd filesep 'Supporting_Models']);
+addpath([pwd filesep 'SimResults']);
 
 % FOR CUSTOM ORIFICES
 cd('Libraries');

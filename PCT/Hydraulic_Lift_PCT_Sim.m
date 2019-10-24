@@ -6,6 +6,7 @@ ssc_hydraulic_lift_setdefault(orig_mdl)
 ssc_hydraulic_lift_tictoc(orig_mdl,'off')
 set_param([orig_mdl '/SLRT Scope'],'Commented','on');
 set_param(orig_mdl,'SimscapeLogType','none');
+set_param([orig_mdl '/Servo and Controller/Custom/Rotational Damper'],'D_conf','runtime');
 save_system(orig_mdl,mdl);
 
 %clear motor_damping;

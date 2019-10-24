@@ -15,7 +15,6 @@ component SpringLUT
   parameters
     xd = {[-0.5 -0.4 0 0.4 0.5], 'mm'}; % Displacement
     kd = {[100 10 10 10 100], 'N/m'};   % Spring Stiffness
-    x0 = {0, 'm'};                      % Initial Deformation
   end
   variables
     f = { 0, 'N'   }; % Force through variable
@@ -24,7 +23,9 @@ component SpringLUT
     k = { 0, 'N/m' }; % Spring Stiffness
   end
   function setup
-    x = x0;
+    if any(kd<0)
+        pm_error('simscape:GreaterThanOrEqualToZero','Spring Stiffness')
+    end
   end
 
   branches
@@ -37,7 +38,7 @@ component SpringLUT
     k == tablelookup(xd,kd,x,...
         interpolation=linear,...
         extrapolation=nearest);
-    f == k*x;    % Spring Equation
-    v == x.der;  % 
+    f == k*x;    % Force equation
+    v == x.der;  % Displacement equation
   end
 end
