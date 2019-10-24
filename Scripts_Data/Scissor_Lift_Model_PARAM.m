@@ -1,5 +1,12 @@
 % SCISSOR LIFT PARAMETERS
-% Copyright 2012 The MathWorks, Inc.
+% Copyright 2012-2016 The MathWorks, Inc.
+
+motor_damping = Simulink.Parameter;
+motor_damping.CoderInfo.StorageClass = 'SimulinkGlobal';
+motor_damping.Value = 0.01; %(Nm/(rad/s))
+
+Scissor_Lift_Param.Initial_Angle = 45; % deg
+
 
 Scissor_Lift_Param.Initial_Angle = 45; % deg
 Scissor_Lift_Param.Initial_Cyl_Ext = 50;   % mm

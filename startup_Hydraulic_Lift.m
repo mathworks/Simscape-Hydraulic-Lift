@@ -1,9 +1,12 @@
-% Copyright 2012 The MathWorks, Inc.
+% Copyright 2012-2016 The MathWorks, Inc.
 
+HydrLift_Homedir = pwd;
+addpath(pwd);
 addpath([pwd '\Images']);
 addpath([pwd '\Scripts_Data']);
 addpath([pwd '\Libraries']);
 addpath([pwd '\Libraries\Images']);
+addpath([pwd '\SimResults']);
 
 % FOR CUSTOM ORIFICES
 cd('Libraries');
@@ -15,6 +18,6 @@ end
 cd ..;
 
 Scissor_Lift_Model_PARAM
-
-Hydraulic_Lift
+ssc_hydraulic_lift_sethardstop('adjusted');
+ssc_hydraulic_lift
 

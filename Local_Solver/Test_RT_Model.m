@@ -1,9 +1,10 @@
 %% OPEN MODEL
-mdl = 'Hydraulic_Lift_LS';     
+mdl = 'ssc_hydraulic_lift';
 open_system(mdl);
+ssc_hydraulic_lift_setupRTtest
 
 %% GET REFERENCE RESULTS
-open_system([mdl '/Desktop Settings']);
+ssc_hydraulic_lift_setdesktop
 sim(mdl)
 t_ref = tout; y_ref = yout;
 clear tout yout
@@ -17,7 +18,7 @@ xlabel('Time (s)','FontSize',12);ylabel('Results');
 legend({'Reference'},'Location','best')
 
 %% LOAD REAL-TIME SIMULATION SOLVER SETTINGS
-open_system([mdl '/Real Time Settings']);
+ssc_hydraulic_lift_setrealtime
 sim(mdl)
 t_fs = tout; y_fs = yout;
 
@@ -33,7 +34,7 @@ legend([h1(1) h2(1)],{'Reference','Fixed-Step'},'Location','best')
 hold off
 
 %% BUILD AND DOWNLOAD XPC TARGET
-rtwbuild(mdl);
+slbuild(mdl);
 
 %% SET SIMULATION MODE TO EXTERNAL
 set_param(mdl,'SimulationMode','External');
@@ -44,7 +45,7 @@ set_param(mdl, 'SimulationCommand', 'connect')
 set_param(mdl, 'SimulationCommand', 'start')
 
 open_system(mdl);
-disp('Waiting for xPC to finish...');
+disp('Waiting for SLRT to finish...');
 pause(1);
 disp(get_param(bdroot,'SimulationStatus'));
 while(~strcmp(get_param(bdroot,'SimulationStatus'),'stopped'))
@@ -65,7 +66,7 @@ xlabel('Time (s)'); ylabel('Results');
 title('Reference and Real-Time Results','FontSize',14,'FontWeight','Bold');
 legend([h1(1),h2(1),h3(1)],{'Reference','Fixed-Step','Real-Time'},'Location','Best');
 
-% Copyright 2012 The MathWorks(TM), Inc.
+% Copyright 2012-2016 The MathWorks(TM), Inc.
 
 %% CLEAN UP DIRECTORY
 cleanup_rt_dir

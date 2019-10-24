@@ -17,7 +17,7 @@ function [xy_data] = Extr_Data_LinkHoles(L, W, r, num_holes, varargin)
 %   add 'plot' as the final argument
 %   >> Extr_Data_LinkHoles(10,5,1,3,'plot')
 
-% Copyright 2012 The MathWorks, Inc.
+% Copyright 2012-2016 The MathWorks, Inc.
 
 % DEFAULT DATA TO SHOW DIAGRAM
 if (nargin == 0)

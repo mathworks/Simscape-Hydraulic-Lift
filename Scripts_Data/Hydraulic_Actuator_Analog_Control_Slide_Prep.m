@@ -1,16 +1,10 @@
-% Copyright 2012 The MathWorks, Inc.
+% Copyright 2012-2016 The MathWorks, Inc.
 
 colordef black;
 
 time = Hydraulic_Acutator_Analog_Control_DATA.time;
 Commanded_Position_Data = Hydraulic_Acutator_Analog_Control_DATA.signals.values(:,1);
 Cylinder_Position_Data = Hydraulic_Acutator_Analog_Control_DATA.signals.values(:,2);
-%Input_Shaft_Data = SimDriveline_clutch_gear_DATA.signals(2).values(:,2);
-%Output_Shaft_Data = SimDriveline_clutch_gear_DATA.signals(2).values(:,1);
-%Voltage_Data = ASM.signals(1).values;
-%Disp_Data = FEL_Actuator_DATA.signals(1).values(:,1);
-%Current_Data = ASM.signals(2).values;
-%Speed_Data = ASM.signals(3).values;
 
 figure(1);
 clf;
