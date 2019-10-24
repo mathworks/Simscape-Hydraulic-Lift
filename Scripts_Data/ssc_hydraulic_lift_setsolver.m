@@ -1,5 +1,5 @@
 function ssc_hydraulic_lift_setsolver(mdl,deskreal)
-% Copyright 2011-2018 The MathWorks, Inc.
+% Copyright 2011-2019 The MathWorks, Inc.
 
 desktop_solver = 'ode23t';
 desktop_maxstep = '0.02';

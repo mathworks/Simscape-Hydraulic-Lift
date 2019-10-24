@@ -1,5 +1,5 @@
 function ssc_hydraulic_lift_tictoc(mdl,enable)
-% Copyright 2011-2018 The MathWorks, Inc.
+% Copyright 2011-2019 The MathWorks, Inc.
 
 if(strcmpi(enable,'on'))
     set_param(mdl,'StartFcn','tic;');
