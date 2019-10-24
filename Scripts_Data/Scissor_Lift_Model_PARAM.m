@@ -1,5 +1,5 @@
 % SCISSOR LIFT PARAMETERS
-% Copyright 2012-2017 The MathWorks, Inc.
+% Copyright 2012-2018 The MathWorks, Inc.
 
 motor_damping = Simulink.Parameter;
 motor_damping.CoderInfo.StorageClass = 'SimulinkGlobal';

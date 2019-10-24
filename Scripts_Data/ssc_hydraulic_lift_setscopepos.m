@@ -1,4 +1,4 @@
-% Copyright 2012-2017 The MathWorks, Inc.
+% Copyright 2012-2018 The MathWorks, Inc.
 a=find_system(bdroot,'Name','Position');
 set_param(a{1},'Open','on');
 shh=findall(0,'Tag','SIMULINK_SIMSCOPE_FIGURE');
