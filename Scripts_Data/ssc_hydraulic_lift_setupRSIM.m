@@ -1,4 +1,4 @@
-% Copyright 2012-2016 The MathWorks, Inc.
+% Copyright 2012-2017 The MathWorks, Inc.
 Aileron_EH_Final_Values;
 Aileron_EH_tictoc(orig_mdl,'off');
 Aileron_EH_setsolver(orig_mdl,'desktop');

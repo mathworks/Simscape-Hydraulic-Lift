@@ -96,7 +96,7 @@ h4=stairs(t_rt2,y_rt2,'Color',temp_colororder(4,:),'LineWidth',2);
 hold off
 legend({'Reference','Fixed-Step','Real-Time','Modified'},'Location','NorthEast');
 
-% Copyright 2012-2016 The MathWorks(TM), Inc.
+% Copyright 2012-2017 The MathWorks(TM), Inc.
 %% CLEAN UP DIRECTORY
 cleanup_rt_dir
 close(1)

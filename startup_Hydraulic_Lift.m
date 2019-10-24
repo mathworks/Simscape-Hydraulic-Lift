@@ -1,11 +1,11 @@
-% Copyright 2012-2016 The MathWorks, Inc.
+% Copyright 2012-2017 The MathWorks, Inc.
 
 HydrLift_Homedir = pwd;
 addpath(pwd);
 addpath([pwd filesep 'Images']);
 addpath([pwd filesep 'Scripts_Data']);
 addpath([pwd filesep 'Libraries']);
-addpath([pwd filesep 'Libraries\Images']);
+addpath([pwd filesep 'Libraries' filesep 'Images']);
 addpath([pwd filesep 'Supporting_Models']);
 addpath([pwd filesep 'SimResults']);
 

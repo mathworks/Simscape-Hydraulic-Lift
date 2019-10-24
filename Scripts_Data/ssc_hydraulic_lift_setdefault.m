@@ -1,5 +1,5 @@
 function ssc_hydraulic_lift_setdefault(mdl)
-% Copyright 2012-2016 The MathWorks, Inc.
+% Copyright 2012-2017 The MathWorks, Inc.
 set_param([mdl '/Valve'],'OverrideUsingVariant','Custom');
 set_param([mdl '/Actuator'],'OverrideUsingVariant','Custom');
 set_param([mdl '/Servo and Controller'],'OverrideUsingVariant','Custom');
