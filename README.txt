@@ -8,7 +8,7 @@ The controller commands the voltage to a servomotor which moves the
 spool in a hydraulic valve to adjust the flow into and out of a 
 double-acting hydraulic cylinder.
 
-Run >>startup_Backhoe to get started.
+Open project Hydraulic_Lift.prj to get started.
 
 There are many variants within this model that demonstrate how to use
 standard components from the Simscape add-on products and create 
