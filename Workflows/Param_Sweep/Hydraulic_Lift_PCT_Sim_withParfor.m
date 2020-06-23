@@ -2,7 +2,7 @@
 
 % Resave model in PCT directory
 cd(fileparts(which('ssc_hydraulic_lift.slx')));
-cd('PCT');
+cd(['Workflows' filesep 'Param_Sweep']);
 orig_mdl = 'ssc_hydraulic_lift';
 open_system(orig_mdl);
 mdl = [orig_mdl '_pct_temp'];
@@ -15,6 +15,9 @@ save_system(orig_mdl,mdl);
 
 %clear motor_damping;
 %motor_damping = 0.01;
+
+%% BUILD TARGET
+rtp = Simulink.BlockDiagram.buildRapidAcceleratorTarget(mdl);
 
 %% GENERATE PARAMETER SETS
 motordamp_array = [0.01:0.01:0.2]; 
@@ -54,9 +57,7 @@ delete(gcp);
 
 %% CLEANUP DIR
 bdclose(mdl);
-delete('*.mex*')
-!rmdir slprj /S/Q
 delete([mdl '.slx']);
 
-% Copyright 2013-2019 The MathWorks(TM), Inc.
+% Copyright 2013-2020 The MathWorks(TM), Inc.
 

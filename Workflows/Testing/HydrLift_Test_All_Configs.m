@@ -1,5 +1,6 @@
-% Copyright 2013-2019 The MathWorks, Inc.
+% Copyright 2013-2020 The MathWorks, Inc.
 
+cd(fileparts(which(mfilename)))
 mdl = 'ssc_hydraulic_lift';
 open_system(mdl);
 Motor_Conf = {'Custom' 'Standard'};

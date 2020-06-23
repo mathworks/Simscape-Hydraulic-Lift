@@ -1,7 +1,9 @@
 % Protect model containing Simscape components
 % and test with varying parameters.
 
-% Copyright 2013-2019 The MathWorks(TM), Inc.
+% Copyright 2013-2020 The MathWorks(TM), Inc.
+
+cd(fileparts(which(mfilename)))
 
 % Open model, create copy
 orig_mdl = 'ssc_hydraulic_lift';
@@ -37,7 +39,7 @@ set_param([mdl '/Subsystem'],...
 
 %% Create Reference Model
 set_param(refsys,'TreatAsAtomicUnit','on');
-
+warning('off','Simulink:protectedModel:ProtectedModelCallbackLostWarning')
 Simulink.SubSystem.convertToModelReference(...
    refsys,refmdl, ...
    'AutoFix',true,...
@@ -88,7 +90,8 @@ bdclose(mdl);
 delete([mdl '.slx']);
 bdclose(refmdl);
 delete([refmdl '.slx']);
+% Not necessary inside a project
 delete([refmdl '.slxp']);
-delete('*.mex*')
-!rmdir slprj /S/Q
+%delete('*.mex*')
+%!rmdir slprj /S/Q
 

@@ -1,5 +1,5 @@
 function shutdown_Hydraulic_Lift
-% Copyright 2012-2019 The MathWorks, Inc.
+% Copyright 2012-2020 The MathWorks, Inc.
 
 curr_proj = simulinkproject;
 cd(curr_proj.RootFolder);
@@ -12,3 +12,6 @@ if(exist('+Custom','dir') && exist('Custom_lib.slx','file'))
 end
 cd(curr_proj.RootFolder);
 
+% If parameter sweep plot still open, close it
+try close(h4_ssc_hydraulic_lift_pct),end
+clear h4_ssc_hydraulic_lift_pct

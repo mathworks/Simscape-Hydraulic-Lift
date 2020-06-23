@@ -1,5 +1,5 @@
 Hydraulic Lift Table
-Copyright 2012-2019 The MathWorks, Inc.
+Copyright 2012-2020 The MathWorks, Inc.
 
 Models a hydraulic lift table with one electrohydraulic actuator.  
 A control system, implemented as an analog circuit tracks a reference 

@@ -1,5 +1,5 @@
 function startup_Hydraulic_Lift
-% Copyright 2012-2019 The MathWorks, Inc.
+% Copyright 2012-2020 The MathWorks, Inc.
 
 curr_proj = simulinkproject;
 cd(curr_proj.RootFolder);
@@ -15,5 +15,18 @@ cd(curr_proj.RootFolder);
 
 evalin('base','Scissor_Lift_Model_PARAM');
 
-ssc_hydraulic_lift_sethardstop('adjusted');
-ssc_hydraulic_lift
+open_start_content = 1;
+
+% If running in a parallel pool
+% do not open model or demo script
+if(~isempty(ver('parallel')))
+    if(~isempty(getCurrentTask()))
+        open_start_content = 0;
+    end
+end
+
+if(open_start_content)
+    ssc_hydraulic_lift_sethardstop('adjusted');
+    ssc_hydraulic_lift
+    open('ssc_hydraulic_lift_Demo_Script.html');
+end
