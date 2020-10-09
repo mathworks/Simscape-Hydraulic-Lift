@@ -6,6 +6,8 @@ delete('*pt.m')
 delete('*ref.m')
 delete('*.dlm')
 delete('*.xml')
+delete('*.mldatx')
+
 rtw_dirs = dir('*_rtw');
 for i=1:size(rtw_dirs,1)
     rmdir(rtw_dirs(i).name,'s');
@@ -13,4 +15,7 @@ for i=1:size(rtw_dirs,1)
 end
 bdclose all
 delete('*.mex*')
-!rmdir slprj /S/Q
+
+delete([mdl '.slx']);
+
+
