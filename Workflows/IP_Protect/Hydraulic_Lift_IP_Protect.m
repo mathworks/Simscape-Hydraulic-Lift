@@ -1,7 +1,7 @@
 % Protect model containing Simscape components
 % and test with varying parameters.
 
-% Copyright 2013-2020 The MathWorks(TM), Inc.
+% Copyright 2013-2021 The MathWorks(TM), Inc.
 
 cd(fileparts(which(mfilename)))
 
@@ -14,7 +14,7 @@ open_system(orig_mdl);
 
 ssc_hydraulic_lift_setdefault(orig_mdl)
 ssc_hydraulic_lift_tictoc(orig_mdl,'off')
-set_param([orig_mdl '/SLRT Scope'],'Commented','on');
+%set_param([orig_mdl '/SLRT Scope'],'Commented','on');
 set_param(orig_mdl,'SimscapeLogType','none');
 set_param([orig_mdl '/Servo and Controller/Custom/Rotational Damper'],'D_conf','runtime');
 

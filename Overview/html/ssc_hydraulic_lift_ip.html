@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Hydraulic Lift Demo Script</title><meta name="generator" content="MATLAB 9.10"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-03-09"><meta name="DC.source" content="ssc_hydraulic_lift_Demo_Script.m"><style type="text/css">
+      --><title>IP Protection for Hydraulic Lift Model</title><meta name="generator" content="MATLAB 9.10"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-03-09"><meta name="DC.source" content="ssc_hydraulic_lift_ip.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -67,47 +67,54 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Hydraulic Lift Demo Script</h1><p>
-<span style="font-family:Arial">
-<span style="font-size:10pt">
-<tr><b><u>Model</u></b><br>
-<tr>1.  <a href="matlab:open_system('ssc_hydraulic_lift');">Open Hydraulic Lift Model</a><br>
-<tr>2.  Model DC Motor: <a href="matlab:cd(fileparts(which('dc_motor_scratch.slx')));open_system('dc_motor_scratch')">Finished Model</a><br>
-<tr>3.  <a href="matlab:cd(fileparts(which('Spring_Test.slx')));open_system('Spring_Test');">Model Custom Spring</a><br>
-<br>
-<tr><b><u>Simulate</u></b><br>
-<tr>4. <a href="matlab:cd(fileparts(which('Hydraulic_Lift_Param_Sweep.m')));edit Hydraulic_Lift_Param_Sweep;">Distribute Simulations Using Parallel Computing</a><br>
-<br>
-<tr><b><u>Deploy</u></b><br>
-<tr>5. <a href="matlab:cd(fileparts(which('ssc_hydraulic_lift_SLRT.m')));edit ssc_hydraulic_lift_SLRT;">Real-Time Simulation</a><br>
-<tr>6. <a href="matlab:cd(fileparts(which('Hydraulic_Lift_IP_Protect.m')));edit Hydraulic_Lift_IP_Protect">Protect IP To Share Model</a><br>
-</style>
-</style>
-</p><p>Copyright 2012-2021 The MathWorks&#8482;, Inc.</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021a</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>IP Protection for Hydraulic Lift Model</h1><!--introduction--><p>This example models a hydraulic lift.  We use code generation technology to create a protected model of the hydraulic lift.  One parameter is exposed that the user can modify in the protected model.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Model</a></li><li><a href="#2">IP Protection</a></li></ul></div><h2 id="1">Model</h2><img vspace="5" hspace="5" src="ssc_hydraulic_lift_ip_01.png" alt=""> <h2 id="2">IP Protection</h2><p>The plots below show the results when a single parameter is varied in the protected model.</p><pre class="codeoutput">### Successfully converted Subsystem block to Model block.
+### Starting serial model reference simulation build
+### Generating code for Physical Networks associated with solver block 'Hydraulic_Lift/Pump and Tank/Solver Configuration' ... 
+done.
+### Generating code for Physical Networks associated with solver block 'Hydraulic_Lift/Pump and Tank/Solver Configuration' ... 
+done.
+### Successfully updated the model reference simulation target for: Hydraulic_Lift
+
+Build Summary
+
+Simulation targets built:
+
+Model           Action                       Rebuild Reason                             
+========================================================================================
+Hydraulic_Lift  Code generated and compiled  Hydraulic_Lift_msp.mexw64 does not exist.  
+
+1 of 1 models built (0 models already up to date)
+Build duration: 0h 0m 37.543s
+</pre><img vspace="5" hspace="5" src="ssc_hydraulic_lift_ip_02.png" alt=""> <p class="footer">Copyright 2017-2021 The MathWorks, Inc.<br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-%% Hydraulic Lift Demo Script
+%% IP Protection for Hydraulic Lift Model
 %
-% <html>
-% <span style="font-family:Arial">
-% <span style="font-size:10pt">
-% <tr><b><u>Model</u></b><br>
-% <tr>1.  <a href="matlab:open_system('ssc_hydraulic_lift');">Open Hydraulic Lift Model</a><br>
-% <tr>2.  Model DC Motor: <a href="matlab:cd(fileparts(which('dc_motor_scratch.slx')));open_system('dc_motor_scratch')">Finished Model</a><br>
-% <tr>3.  <a href="matlab:cd(fileparts(which('Spring_Test.slx')));open_system('Spring_Test');">Model Custom Spring</a><br>
-% <br>
-% <tr><b><u>Simulate</u></b><br>
-% <tr>4. <a href="matlab:cd(fileparts(which('Hydraulic_Lift_Param_Sweep.m')));edit Hydraulic_Lift_Param_Sweep;">Distribute Simulations Using Parallel Computing</a><br>
-% <br>
-% <tr><b><u>Deploy</u></b><br>
-% <tr>5. <a href="matlab:cd(fileparts(which('ssc_hydraulic_lift_SLRT.m')));edit ssc_hydraulic_lift_SLRT;">Real-Time Simulation</a><br>
-% <tr>6. <a href="matlab:cd(fileparts(which('Hydraulic_Lift_IP_Protect.m')));edit Hydraulic_Lift_IP_Protect">Protect IP To Share Model</a><br>
-% </style>
-% </style>
-% </html>
+% This example models a hydraulic lift.  We use code generation technology
+% to create a protected model of the hydraulic lift.  One parameter is
+% exposed that the user can modify in the protected model.
+%
 % 
+% Copyright 2017-2021 The MathWorks, Inc.
+
+%% Model
+
+open_system('ssc_hydraulic_lift')
+
+ann_h = find_system('ssc_hydraulic_lift','FindAll', 'on','type','annotation','Tag','ModelFeatures');
+for i=1:length(ann_h)
+    set_param(ann_h(i),'Interpreter','off');
+end
+
+%% IP Protection
+%%
 %
-% Copyright 2012-2021 The MathWorks(TM), Inc.
+% The plots below show the results when a single parameter is varied in the
+% protected model.
 
+Hydraulic_Lift_IP_Protect;
 
+%%
+close all
+bdclose all
 ##### SOURCE END #####
 --></body></html>

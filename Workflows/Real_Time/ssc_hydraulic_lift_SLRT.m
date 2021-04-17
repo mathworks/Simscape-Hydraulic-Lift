@@ -105,7 +105,7 @@ stairs(y_slrt2.Values.Time,y_slrt2.Values.Data(:,2),'Color',temp_colororder(4,:)
 hold off
 legend({'Reference','Fixed-Step','Real-Time','Modified'},'Location','NorthEast');
 
-% Copyright 2012-2020 The MathWorks(TM), Inc.
+% Copyright 2012-2021 The MathWorks(TM), Inc.
 %% CLEAN UP DIRECTORY
 %cleanup_rt_dir
 %close(1)

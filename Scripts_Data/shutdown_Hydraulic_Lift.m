@@ -1,5 +1,5 @@
 function shutdown_Hydraulic_Lift
-% Copyright 2012-2020 The MathWorks, Inc.
+% Copyright 2012-2021 The MathWorks, Inc.
 
 curr_proj = simulinkproject;
 cd(curr_proj.RootFolder);
