@@ -70,7 +70,7 @@ end
 pause(2);
 
 %% Extract results from logged data in Simulink Data Inspector
-y_slrt1 = logsout.LiveStreamSignals.get('Position');
+y_slrt1 = logsout.getElement('Position');
 
 %% Plot reference and real-time results
 figure(1)
@@ -96,7 +96,7 @@ end
 pause(2);
 
 %% Extract results from logged data in Simulink Data Inspector
-y_slrt2 = logsout.LiveStreamSignals.get('Position');
+y_slrt2 = logsout.getElement('Position');
 
 %% Add results of run-time parameter test
 figure(1)
