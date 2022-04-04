@@ -1,4 +1,4 @@
-% Copyright 2012-2021 The MathWorks(TM), Inc.
+% Copyright 2012-2022 The MathWorks(TM), Inc.
 
 set(gcf,'Position',[765   405   449   336]);
 box on

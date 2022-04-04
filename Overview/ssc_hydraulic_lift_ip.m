@@ -5,7 +5,7 @@
 % exposed that the user can modify in the protected model.
 %
 % 
-% Copyright 2017-2021 The MathWorks, Inc.
+% Copyright 2017-2022 The MathWorks, Inc.
 
 %% Model
 

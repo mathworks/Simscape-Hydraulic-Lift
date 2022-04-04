@@ -1,6 +1,6 @@
 component(Hidden=true) TwoPort
 % Hydraulic 2-Port Schema
-% Copyright 2005-2021 The MathWorks, Inc.
+% Copyright 2005-2022 The MathWorks, Inc.
   nodes
     A = foundation.hydraulic.hydraulic; % A:left
     B = foundation.hydraulic.hydraulic; % B:right
