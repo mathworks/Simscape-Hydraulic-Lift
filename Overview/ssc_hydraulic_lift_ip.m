@@ -11,7 +11,7 @@
 
 open_system('ssc_hydraulic_lift')
 
-ann_h = find_system('ssc_hydraulic_lift','FindAll', 'on','type','annotation','Tag','ModelFeatures');
+ann_h = find_system('ssc_hydraulic_lift','MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','type','annotation','Tag','ModelFeatures');
 for i=1:length(ann_h)
     set_param(ann_h(i),'Interpreter','off');
 end

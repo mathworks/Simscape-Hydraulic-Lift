@@ -40,7 +40,7 @@ for sc_i = 1:length(Solver_Conf)
                             catch
                                 Elapsed_Sim_Time = Elapsed_Sim_Time;
                                 disp('Simulation Failed')
-                            end;
+                            end
                             res_out{num_runs, 7+(sc_i-1)*2+1} = length(tout);
                             res_out{num_runs, 7+(sc_i-1)*2+2} = Elapsed_Sim_Time;
                         end
