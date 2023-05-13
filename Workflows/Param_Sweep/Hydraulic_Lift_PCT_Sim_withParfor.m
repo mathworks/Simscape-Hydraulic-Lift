@@ -59,5 +59,5 @@ delete(gcp);
 bdclose(mdl);
 delete([mdl '.slx']);
 
-% Copyright 2013-2022 The MathWorks(TM), Inc.
+% Copyright 2013-2023 The MathWorks(TM), Inc.
 

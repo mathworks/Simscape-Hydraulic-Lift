@@ -3,7 +3,7 @@
 %
 % <enter plot description here if desired>
 %
-% Copyright 2016-2022 The MathWorks, Inc.
+% Copyright 2016-2023 The MathWorks, Inc.
 
 % Generate simulation results if they don't exist
 if ~exist('simlog_dc_motor_scratch', 'var')
