@@ -1,7 +1,10 @@
 # **Hydraulic Lift Table**
-Copyright 2012-2020 The MathWorks(TM), Inc.
+Copyright 2012-2023 The MathWorks(TM), Inc.
 
-[![View Lift Table Model in Simscape on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/39120-lift-table-model-in-simscape)
+![](Overview/html/ssc_hydraulic_lift_ip_01.png)
+
+View on File Exchange: [![View Lift Table Model in Simscape on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/39120-lift-table-model-in-simscape)  
+You can also open in MATLAB Online: [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=mathworks/Simscape-Hydraulic-Lift&project=Hydraulic_Lift.prj)
 
 Models a hydraulic lift table with one electrohydraulic actuator.  
 A control system, implemented as an analog circuit tracks a reference 

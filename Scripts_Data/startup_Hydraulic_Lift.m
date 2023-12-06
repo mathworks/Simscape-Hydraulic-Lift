@@ -28,5 +28,5 @@ end
 if(open_start_content)
     ssc_hydraulic_lift_sethardstop('adjusted');
     ssc_hydraulic_lift
-    open('ssc_hydraulic_lift_Demo_Script.html');
+    web('ssc_hydraulic_lift_Demo_Script.html');
 end

@@ -49,6 +49,7 @@ Simulink.SubSystem.convertToModelReference(...
 open_system(refmdl);
 set_param(refmdl,'SimscapeLogType','none');
 set_param(refmdl,'ModelReferenceNumInstancesAllowed','single');
+set_param(refmdl,'SimMechanicsUnconnectedFramePorts','none');
 save_system(refmdl);
 
 %% Create and reference protected model
