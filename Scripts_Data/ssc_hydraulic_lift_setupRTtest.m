@@ -1,4 +1,4 @@
-% Copyright 2012-2023 The MathWorks, Inc.
+% Copyright 2012-2024 The MathWorks, Inc.
 % Select Variants
 set_param([bdroot '/Load'],'OverrideUsingVariant','Scissor');
 set_param([bdroot '/Actuator'],'OverrideUsingVariant','Standard');
