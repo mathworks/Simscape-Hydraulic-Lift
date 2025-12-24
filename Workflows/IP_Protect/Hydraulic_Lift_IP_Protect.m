@@ -1,7 +1,7 @@
 % Protect model containing Simscape components
 % and test with varying parameters.
 
-% Copyright 2013-2024 The MathWorks(TM), Inc.
+% Copyright 2013-2025 The MathWorks(TM), Inc.
 
 cd(fileparts(which(mfilename)))
 

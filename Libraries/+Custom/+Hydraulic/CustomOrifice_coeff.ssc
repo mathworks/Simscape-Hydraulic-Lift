@@ -3,7 +3,7 @@ component CustomOrifice_coeff < Custom.Hydraulic.TwoPort
 % The block models an orifice defined by dP = k1*Q + k2*sign(Q)*Q^2 where
 % dP is the pressure drop, Q is the flow rate and k1 and k1 are constants. 
 
-% Copyright 2005-2024 The MathWorks, Inc.
+% Copyright 2005-2025 The MathWorks, Inc.
 
 parameters
     k1     = { 2e6 , 'Pa/(m^3/s)'};   % Constant k1

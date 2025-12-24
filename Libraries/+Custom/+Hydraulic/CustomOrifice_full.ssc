@@ -2,7 +2,7 @@ component CustomOrifice_full
 % Custom Orifice (full)
 % The block models a fixed orifice for laminar and turbulent regimes
 
-% Copyright 2005-2024 The MathWorks, Inc.
+% Copyright 2005-2025 The MathWorks, Inc.
 
   nodes
     A = foundation.hydraulic.hydraulic; % A:left

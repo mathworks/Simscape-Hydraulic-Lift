@@ -1,6 +1,6 @@
 % Script for testing ssc_hydraulic_lift
 % and publishing results
-% Copyright 2012-2024 The MathWorks, Inc.
+% Copyright 2012-2025 The MathWorks, Inc.
 
 % List of test models 
 % Note that publish scripts do not match model names

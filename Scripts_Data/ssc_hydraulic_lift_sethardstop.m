@@ -1,5 +1,5 @@
 function ssc_hydraulic_lift_sethardstop(paramset)
-% Copyright 2012-2024 The MathWorks, Inc.
+% Copyright 2012-2025 The MathWorks, Inc.
 
 if strcmpi(paramset,'initial')
     evalin('base','actuator_hs_k = 1e9;')
