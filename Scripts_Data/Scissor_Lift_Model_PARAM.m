@@ -3,7 +3,7 @@
 
 motor_damping = Simulink.Parameter;
 motor_damping.CoderInfo.StorageClass = 'SimulinkGlobal';
-motor_damping.Value = 0.01; %(Nm/(rad/s))
+motor_damping.Value = 0.01*20; %(Nm/(rad/s))
 
 Scissor_Lift_Param.Initial_Angle = 45; % deg
 

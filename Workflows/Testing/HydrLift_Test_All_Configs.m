@@ -37,12 +37,15 @@ for sc_i = 1:length(Solver_Conf)
                             disp([num2str(sc_i) ' ' Solver_Conf{sc_i} '; H: ' Hardstop_Conf{hs_n} '; C:' Control_Conf{co_o} '; M:' Motor_Conf{mo_j} '; V:' Valve_Conf{va_k}  '; A:' Actuator_Conf{ac_l} '; L: ' Load_Conf{lo_m}]);
                             try
                                 sim(mdl);
+                                passFail = 'pass';
                             catch
                                 Elapsed_Sim_Time = Elapsed_Sim_Time;
                                 disp('Simulation Failed')
+                                passFail = 'fail';
                             end
-                            res_out{num_runs, 7+(sc_i-1)*2+1} = length(tout);
-                            res_out{num_runs, 7+(sc_i-1)*2+2} = Elapsed_Sim_Time;
+                            res_out{num_runs, 7+(sc_i-1)*3+1} = length(tout);
+                            res_out{num_runs, 7+(sc_i-1)*3+2} = Elapsed_Sim_Time;
+                            res_out{num_runs, 7+(sc_i-1)*3+3} = passFail;
                         end
                     end
                 end
@@ -53,7 +56,7 @@ end
 
 bdclose(mdl);
 
-res_out_titles = {'Run' 'Hardstop' 'Control' 'Motor' 'Valve' 'Actuator' 'Load' '# Steps' 'Time' '# Steps' 'Time'};
+res_out_titles = {'Run' 'Hardstop' 'Control' 'Motor' 'Valve' 'Actuator' 'Load' '# Steps' 'Time' 'Pass' '# Steps' 'Time' 'Pass'};
 
 cd(fileparts(which('Hydraulic_Lift_Res.xlsx')));
 xlswrite('Hydraulic_Lift_Res.xlsx',res_out_titles,version('-release'),'A2');

@@ -62,13 +62,13 @@ set_param(refsys,'ModelName',[refmdl '.slxp']);
 bdclose(refmdl);
 
 %% Run simulation with modified parameter value
-motor_damping.Value = 0.01;
+motor_damping.Value = 0.01*20;
 sim(mdl);
 t_run1 = LoadPosition_DATA.time;
 y_run1 = LoadPosition_DATA.signals.values(:,2);
 y_ref = LoadPosition_DATA.signals.values(:,1);
 
-motor_damping.Value = 0.2;
+motor_damping.Value = 0.2*5;
 sim(mdl);
 t_run2 = LoadPosition_DATA.time;
 y_run2 = LoadPosition_DATA.signals.values(:,2);
