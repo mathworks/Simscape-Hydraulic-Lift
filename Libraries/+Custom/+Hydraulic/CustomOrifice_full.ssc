@@ -2,7 +2,7 @@ component CustomOrifice_full
 % Custom Orifice (full)
 % The block models a fixed orifice for laminar and turbulent regimes
 
-% Copyright 2005-2025 The MathWorks, Inc.
+% Copyright 2005-2026 The MathWorks, Inc.
 
   nodes
     A = foundation.hydraulic.hydraulic; % A:left
@@ -27,23 +27,30 @@ component CustomOrifice_full
     Dh = { 1, 'm' }; 
   end
 
-  function setup
-    if area <= 0
-      error('Orifice area must be greater than zero')
-    end
-    if Cd <= 0
-      error('Flow discharge coefficient must be greater than zero')
-    end
-    Dh = sqrt(4*area/pi);
-    density = A.density;             % use domain parameter from node A
-    viscosity_kin = A.viscosity_kin; % use domain parameter from node A
-  end
+  %function setup
+  %  if area <= 0
+  %    error('Orifice area must be greater than zero')
+  %  end
+  %  if Cd <= 0
+  %    error('Flow discharge coefficient must be greater than zero')
+  %  end
+  %  Dh = sqrt(4*area/pi);
+  %  density = A.density;             % use domain parameter from node A
+  %  viscosity_kin = A.viscosity_kin; % use domain parameter from node A
+  %end
 
   branches
     q : A.q -> B.q; 
   end
 
   equations
+      assert(area > 0)
+      assert( Cd  > 0)
+      let
+          Dh = sqrt(4*area/pi);
+          density = A.density;             % use domain parameter from node A
+          viscosity_kin = A.viscosity_kin; % use domain parameter from node A
+      in
     p == A.p - B.p; 
 
     Re == q/(area*viscosity_kin)*Dh;
@@ -52,6 +59,7 @@ component CustomOrifice_full
     else               % Laminar flow
       q == 2*(Cd/sqrt(Recr))^2*area*Dh*p/(viscosity_kin*density);
     end
+      end
   end
 end
 

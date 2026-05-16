@@ -1,4 +1,4 @@
-% Copyright 2013-2025 The MathWorks, Inc.
+% Copyright 2013-2026 The MathWorks, Inc.
 
 cd(fileparts(which(mfilename)))
 mdl = 'ssc_hydraulic_lift';

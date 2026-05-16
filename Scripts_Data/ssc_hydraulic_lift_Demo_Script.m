@@ -19,5 +19,5 @@
 % </html>
 % 
 %
-% Copyright 2012-2025 The MathWorks(TM), Inc.
+% Copyright 2012-2026 The MathWorks(TM), Inc.
 

@@ -1,7 +1,7 @@
 % Protect model containing Simscape components
 % and test with varying parameters.
 
-% Copyright 2013-2025 The MathWorks(TM), Inc.
+% Copyright 2013-2026 The MathWorks(TM), Inc.
 
 cd(fileparts(which(mfilename)))
 
@@ -53,6 +53,10 @@ set_param(refmdl,'SimMechanicsUnconnectedFramePorts','none');
 save_system(refmdl);
 
 %% Create and reference protected model
+
+% -- disabling warning
+warning off Simulink:Commands:SetParamLinkChangeWarn
+
 [harnessHandle, neededVars] = ...
     Simulink.ModelReference.protect(refmdl,...
     'Harness', false,...
@@ -61,7 +65,11 @@ save_system(refmdl);
 set_param(refsys,'ModelName',[refmdl '.slxp']);
 bdclose(refmdl);
 
+% -- enabling warning
+warning on Simulink:Commands:SetParamLinkChangeWarn
+
 %% Run simulation with modified parameter value
+
 motor_damping.Value = 0.01*20;
 sim(mdl);
 t_run1 = LoadPosition_DATA.time;
@@ -72,6 +80,7 @@ motor_damping.Value = 0.2*5;
 sim(mdl);
 t_run2 = LoadPosition_DATA.time;
 y_run2 = LoadPosition_DATA.signals.values(:,2);
+
 
 figure(1); clf;
 temp_colorOrder = get(gca,'DefaultAxesColorOrder');
